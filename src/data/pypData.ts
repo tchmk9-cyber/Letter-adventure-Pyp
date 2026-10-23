@@ -582,7 +582,7 @@ export const SCIENCE_QUESTIONS: ScienceQuestion[] = [
   // Additional Year 1–Year 4 PYP Inquiry questions across all 6 themes
   {
     id: "senses-eyes",
-    emoji: "👀🌈",
+    emoji: "👀🔭",
     year: "y1",
     theme: "who-we-are",
     q: "Which sense do our eyes give us?",
