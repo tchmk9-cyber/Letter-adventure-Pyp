@@ -1,0 +1,44 @@
+{
+  "register": {
+    "status": 200,
+    "body": {
+      "id": "6adb222568c34f4a9b0e6068",
+      "email": "teacher_probe_1792746020868@demo.com",
+      "name": "Demo Teacher"
+    }
+  },
+  "me": {
+    "status": 200,
+    "body": {
+      "id": "6adb222568c34f4a9b0e6068",
+      "email": "teacher_probe_1792746020868@demo.com",
+      "name": "Demo Teacher"
+    }
+  },
+  "children": {
+    "status": 200,
+    "body": []
+  },
+  "pinStatus": {
+    "status": 200,
+    "body": {
+      "has_pin": false
+    }
+  },
+  "settings": {
+    "status": 200,
+    "body": {
+      "reminders_enabled": true,
+      "reminder_time": "16:00",
+      "reminder_days": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ]
+    }
+  },
+  "voice": {
+    "status": 200,
+    "body": {}
+  }
+}
