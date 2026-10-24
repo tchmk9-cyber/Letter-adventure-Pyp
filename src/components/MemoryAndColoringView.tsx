@@ -70,7 +70,12 @@ export function MemoryGameView({
     setStatusMsg("Flip two cards to find a matching pair! (+15🪙 & +1⭐ only on a real match)");
   };
 
+  // Rebuild the deck only when the year really changes. Without this guard the effect also ran on
+  // mount and silently replaced the first deck after it was shown, so card positions changed under the player.
+  const deckYear = useRef<YearLevel>(year);
   useEffect(() => {
+    if (deckYear.current === year) return;
+    deckYear.current = year;
     setDeck(buildMemoryDeck(deckMode, year, pairCount));
     setFlippedIds([]);
     setMatchedKeys([]);

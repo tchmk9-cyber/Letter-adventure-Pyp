@@ -1,2 +1,5 @@
 node_modules/
 *.log
+node_modules
+tools/out/*
+!tools/out/letter-adventure.compact.canvas.tsx

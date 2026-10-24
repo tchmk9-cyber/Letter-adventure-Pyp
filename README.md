@@ -30,3 +30,12 @@ npm install
 npm run build
 npm test
 ```
+
+## 📒 PYP Workbook (Years 1–4)
+
+Aligned with the IB PYP framework. This is an independent teacher resource, not official IB material.
+
+- **App tab "📒 PYP Workbook":** pick a year (it starts on the active student's year), then one of the 6 themes. Each unit has 7 stages: Unit Overview, Tuning In, Finding Out, Sorting Out, Taking Action, Reflection and Exit Card. Responses are saved per student in localStorage, and the teacher dashboard shows exit-card results.
+- **Data:** `src/data/yearN/` has one file per theme for each year, with the indexes in `src/data/yearNWorkbook.ts`. All years share the types in `src/data/year1/wbTypes.ts`.
+- **Printable A4 workbooks:** `Year-1-PYP-Workbook.pdf` to `Year-4-PYP-Workbook.pdf`. Regenerate them with `node tools/make-pdfs.js`.
+- **Page version:** `node tools/build-canvas.js --compact` writes `tools/out/letter-adventure.compact.canvas.tsx`. It has trimmed question banks and keeps every year, theme and stage.

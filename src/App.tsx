@@ -19,8 +19,10 @@ import { LettersDrillView, WordsSpellView } from "./components/LettersAndWordsVi
 import { MemoryGameView, ColoringStudioView } from "./components/MemoryAndColoringView";
 import { StoryTimeView, MathQuestView, ScienceQuestView } from "./components/StoriesAndQuestsView";
 import { ArcadeView, TeacherAndProfilesView } from "./components/ArcadeAndTeacherView";
+import { PypWorkbookView } from "./components/PypWorkbookView";
 
 type TabId =
+  | "workbook"
   | "pyp"
   | "letters"
   | "words"
@@ -33,6 +35,7 @@ type TabId =
   | "teacher";
 
 const NAV_TABS: { id: TabId; label: string; emoji: string }[] = [
+  { id: "workbook", emoji: "📒", label: "PYP Workbook" },
   { id: "pyp", emoji: "🌍", label: "6 PYP Themes" },
   { id: "letters", emoji: "🔤", label: "Letter Sounds" },
   { id: "words", emoji: "📖", label: "Read Words" },
@@ -271,6 +274,9 @@ export default function App() {
 
         {/* Active View Content */}
         <div style={{ paddingTop: 4 }}>
+          {tab === "workbook" && (
+            <PypWorkbookView students={profiles} activeId={activeChild.id} onAward={(pts: number, st: number) => handleAward(pts, st)} />
+          )}
           {tab === "pyp" && <PypThemesView year={year} child={activeChild} onAward={handleAward} />}
           {tab === "letters" && <LettersDrillView mastered={activeChild.masteredLetters} onAward={handleAward} />}
           {tab === "words" && <WordsSpellView year={year} onAward={handleAward} />}

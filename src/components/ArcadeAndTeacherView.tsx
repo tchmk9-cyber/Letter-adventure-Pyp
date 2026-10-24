@@ -1,4 +1,5 @@
 import { useState, useRef, useGrokTheme } from "../grok";
+import { WbTeacherPanel } from "./PypWorkbookView";
 import type { ChangeEvent } from "../grok";
 import {
   LETTERS,
@@ -403,6 +404,8 @@ export function TeacherAndProfilesView({
                 </div>
               ))}
             </div>
+
+            <WbTeacherPanel students={profiles} initialYear={activeChild.year === "all" ? "y1" : activeChild.year} />
 
             <div style={{ fontSize: 20, fontWeight: 700 }}>🎤 Teacher Voice Recording Studio ({Object.keys(clips).length} saved clips):</div>
             <div style={{ fontSize: 17, color: t.text.secondary }}>
